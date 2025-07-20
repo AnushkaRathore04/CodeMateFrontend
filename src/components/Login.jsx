@@ -9,6 +9,7 @@ const Login = () => {
 
     const [emailId,setEmailId] = useState("anushka@gmail.com");{/* hooks created */}
     const [password,setPassword]= useState("Anushka@123");
+    const [error,setError]= useState("");
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
@@ -25,7 +26,8 @@ const Login = () => {
     return navigate("/");
          }
         catch(err){
-            console.error(err);
+          setError(err?.response?.data || "Something went wrong");
+          
         }
     };
 
@@ -56,6 +58,7 @@ const Login = () => {
               onChange={(e) => setPassword(e.target.value)}
             />
           </div>
+          <p className="text-red-500">{error}</p>
           <button
             type="submit"
             className="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-lg transition duration-200" >
