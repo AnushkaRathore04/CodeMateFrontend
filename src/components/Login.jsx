@@ -45,7 +45,7 @@ const Login = () => {
         {withCredentials:true}
         );
         console.log("Signup response", res.data);
-        dispatch(addUser(res.data.data));
+        dispatch(addUser(res.data));
         return navigate("/profile");
          }
         catch(err){
@@ -56,48 +56,44 @@ const Login = () => {
   return (
     <div className="min-h-screen bg-grey-100 flex items-center justify-center">
       <div className="bg-white shadow-md rounded-2xl px-8 py-10 w-full max-w-sm">
-        <h2 className="text-2xl font-bold text-center mb-6 text-gray-800">{isLoginForm ? "Welcome Back" : "Welcome"}</h2>
+        <h2 className="text-2xl font-bold text-center mb-6 text-gray-800">CodeMate</h2>
 
         <form className="space-y-5" onSubmit={handleLogin}>
 
           {!isLoginForm && <><div>
-            <label className="block mb-1 text-sm text-gray-600">First Name</label>
             <input
               type="firstName"
               value={firstName}
-              className="w-full border border-gray-300 text-black rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full border border-grey-300 text-black rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
               placeholder="Enter your first name"
               onChange={(e) => setFirstName(e.target.value)}
             />
           </div>
 
           <div>
-            <label className="block mb-1 text-sm text-gray-600">Last Name</label>
             <input
               type="lastName"
               value={lastName}
-              className="w-full border border-gray-300 text-black rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full border border-grey-300 text-black rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
               placeholder="Enter your last name"
               onChange={(e) => setLastName(e.target.value)}
             />
           </div></>}
           <div>
-            <label className="block mb-1 text-sm text-gray-600">Email</label>
             <input
               type="email"
               value={emailId}
-              className="w-full border border-gray-300 text-black rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full border border-grey-300 text-black rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
               placeholder="Enter your email"
               onChange={(e) => setEmailId(e.target.value)}
             />
           </div>
 
           <div>
-            <label className="block mb-1 text-sm text-gray-600">Password</label>
             <input
               type="password"
               value={password}
-              className="w-full border border-gray-300 text-black rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full border border-grey-300 text-black rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
               placeholder="Enter your password"
               onChange={(e) => setPassword(e.target.value)}
             />
