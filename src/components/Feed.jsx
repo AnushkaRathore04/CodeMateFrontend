@@ -23,9 +23,12 @@ const Feed = () => {
     getFeed();
     },[]);
 
+    if(!feed) return;
+    if(feed.length <= 0 ) return <h1 className="flex justify-center my-10"> No New Users Found!</h1> 
+
     return(
      feed && (
-        <div className="flex justify-center my-10">
+        <div className="flex justify-center my-2">
             <UserCard user= {feed[0]} />
         </div>
      )
