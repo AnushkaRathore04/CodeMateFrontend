@@ -49,7 +49,5 @@ const Connections = () => {
     </div>
   </div>
 );
-
-
 };
 export default Connections
